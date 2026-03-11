@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Fournisseurs</title>
+</head>
+
+<body>
+
+<h1>Liste des Fournisseurs</h1>
+
+<a href="/fournisseurs/new">Ajouter Fournisseur</a>
+<br><br>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Ville</th>
+        <th>Téléphone</th>
+    </tr>
+
+    <tr th:each="f : ${fournisseurs}">
+
+        <td th:text="${f.id}"></td>
+        <td th:text="${f.nom}"></td>
+        <td th:text="${f.ville}"></td>
+        <td th:text="${f.telephone}"></td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<a href="/produits">Retour Produits</a>
+
+</body>
+</html>

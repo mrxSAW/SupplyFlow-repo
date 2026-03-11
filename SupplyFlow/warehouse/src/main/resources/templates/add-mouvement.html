@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Ajouter Mouvement</title>
+</head>
+
+<body>
+
+<h2>Entrée de Stock</h2>
+
+<form action="/mouvements/entree" method="post">
+
+    Produit :
+
+    <select name="produitId">
+
+        <option th:each="p : ${produits}"
+                th:value="${p.id}"
+                th:text="${p.nom}">
+        </option>
+
+    </select>
+
+    <br><br>
+
+    Quantité :
+
+    <input type="number" name="quantite">
+
+    <br><br>
+
+    <button type="submit">Entrée Stock</button>
+
+</form>
+
+<hr>
+
+<h2>Sortie de Stock</h2>
+
+<form action="/mouvements/sortie" method="post">
+
+    Produit :
+
+    <select name="produitId">
+
+        <option th:each="p : ${produits}"
+                th:value="${p.id}"
+                th:text="${p.nom}">
+        </option>
+
+    </select>
+
+    <br><br>
+
+    Quantité :
+
+    <input type="number" name="quantite">
+
+    <br><br>
+
+    <button type="submit">Sortie Stock</button>
+
+</form>
+
+<br>
+
+<a href="/mouvements">Retour</a>
+
+</body>
+</html>

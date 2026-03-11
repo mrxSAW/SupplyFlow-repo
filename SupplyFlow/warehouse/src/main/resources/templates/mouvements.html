@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Mouvements de Stock</title>
+</head>
+
+<body>
+
+<h1>Mouvements de Stock</h1>
+<a href="/mouvements/new">Ajouter Mouvement</a>
+<br><br>
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Produit</th>
+        <th>Type</th>
+        <th>Quantité</th>
+        <th>Date</th>
+    </tr>
+
+    <tr th:each="m : ${mouvements}">
+
+        <td th:text="${m.id}"></td>
+        <td th:text="${m.produit.nom}"></td>
+        <td th:text="${m.type}"></td>
+        <td th:text="${m.quantite}"></td>
+        <td th:text="${m.date}"></td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<a href="/produits">Retour Produits</a>
+
+</body>
+</html>
